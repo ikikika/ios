@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="YJ3-Op-fTP">
             <objects>
                 <viewController id="Sit-gc-nO1" sceneMemberID="viewController">
@@ -17,13 +17,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="FDm-KS-rvM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="4BC-dK-1wR"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="4BC-dK-1wR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkL-8x-Wtm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2155" y="548"/>
         </scene>
-        <!--Item 1-->
+        <!--Category-->
         <scene sceneID="gJR-js-zn8">
             <objects>
                 <viewController id="bQd-2K-IYm" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="UQt-41-CQH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Bxf-hM-jzm"/>
+                    <tabBarItem key="tabBarItem" title="Category" id="Bxf-hM-jzm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQd-WK-rvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
