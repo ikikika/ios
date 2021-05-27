@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,23 +22,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkL-8x-Wtm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155" y="548"/>
+            <point key="canvasLocation" x="2154" y="458"/>
         </scene>
         <!--Category-->
-        <scene sceneID="gJR-js-zn8">
+        <scene sceneID="END-BO-aHQ">
             <objects>
-                <viewController id="bQd-2K-IYm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6IB-fi-0DB">
+                <collectionViewController id="bD5-lW-W9B" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vzi-8l-U8f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="UQt-41-CQH"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Category" id="Bxf-hM-jzm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oQd-WK-rvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A3R-5U-uE6">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lF6-tx-uIV">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EFE-5P-wJ7">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="bD5-lW-W9B" id="8sM-KN-yba"/>
+                            <outlet property="delegate" destination="bD5-lW-W9B" id="nwX-o6-UGT"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Category" id="Cfw-k9-S4K"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBG-7x-AHQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2154" y="-241"/>
+            <point key="canvasLocation" x="2141" y="-200"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jzg-0k-Jgq">
@@ -49,7 +69,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bQd-2K-IYm" kind="relationship" relationship="viewControllers" id="fEf-sM-Ldx"/>
+                        <segue destination="bD5-lW-W9B" kind="relationship" relationship="viewControllers" id="b1V-pN-kVk"/>
                         <segue destination="Sit-gc-nO1" kind="relationship" relationship="viewControllers" id="o3j-XD-gMM"/>
                     </connections>
                 </tabBarController>
