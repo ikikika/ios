@@ -12,6 +12,7 @@
 		B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */; };
 		B1DB3268266135640013614F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */; };
 		B1DB326A2661375F0013614F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1DB32692661375F0013614F /* GoogleService-Info.plist */; };
+		B1DB326C2661399B0013614F /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB326B2661399B0013614F /* FirebaseCollectionReference.swift */; };
 		B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75610265FD11C0072EEFB /* AppDelegate.swift */; };
 		B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75612265FD11C0072EEFB /* SceneDelegate.swift */; };
 		B1E75618265FD11C0072EEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E75616265FD11C0072EEFB /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1DB32692661375F0013614F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1DB326B2661399B0013614F /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		B1E7560D265FD11C0072EEFB /* eshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E75610265FD11C0072EEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E75612265FD11C0072EEFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */,
 				B1E75616265FD11C0072EEFB /* Main.storyboard */,
 				B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */,
+				B1DB326B2661399B0013614F /* FirebaseCollectionReference.swift */,
 				B1E75619265FD11F0072EEFB /* Assets.xcassets */,
 				B1E7561B265FD11F0072EEFB /* LaunchScreen.storyboard */,
 				B1E7561E265FD11F0072EEFB /* Info.plist */,
@@ -416,6 +419,7 @@
 			files = (
 				B1DB3268266135640013614F /* CategoryCollectionViewCell.swift in Sources */,
 				B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */,
+				B1DB326C2661399B0013614F /* FirebaseCollectionReference.swift in Sources */,
 				B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */,
 				B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */,
 			);
