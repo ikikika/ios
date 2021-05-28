@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4DF379209D33CDF39E34CD2A /* Pods_eshopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA5E825975114FED9F75367 /* Pods_eshopTests.framework */; };
 		AB296C5B06704FDDFABF0BE3 /* Pods_eshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07F44A0A83193C559C1879 /* Pods_eshop.framework */; };
+		B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */; };
 		B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75610265FD11C0072EEFB /* AppDelegate.swift */; };
 		B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75612265FD11C0072EEFB /* SceneDelegate.swift */; };
 		B1E75618265FD11C0072EEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E75616265FD11C0072EEFB /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		7102C166BF2A3CE2508A3B3B /* Pods-eshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eshop.debug.xcconfig"; path = "Target Support Files/Pods-eshop/Pods-eshop.debug.xcconfig"; sourceTree = "<group>"; };
 		7C8B29F38863A200EFD967FC /* Pods-eshop-eshopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eshop-eshopUITests.debug.xcconfig"; path = "Target Support Files/Pods-eshop-eshopUITests/Pods-eshop-eshopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		949FF84602BB53BC52CC33BE /* Pods-eshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eshop.release.xcconfig"; path = "Target Support Files/Pods-eshop/Pods-eshop.release.xcconfig"; sourceTree = "<group>"; };
+		B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		B1E7560D265FD11C0072EEFB /* eshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E75610265FD11C0072EEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E75612265FD11C0072EEFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				B1E75610265FD11C0072EEFB /* AppDelegate.swift */,
 				B1E75612265FD11C0072EEFB /* SceneDelegate.swift */,
+				B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */,
 				B1E75616265FD11C0072EEFB /* Main.storyboard */,
 				B1E75619265FD11F0072EEFB /* Assets.xcassets */,
 				B1E7561B265FD11F0072EEFB /* LaunchScreen.storyboard */,
@@ -406,6 +409,7 @@
 			files = (
 				B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */,
 				B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */,
+				B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
