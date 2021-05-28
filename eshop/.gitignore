@@ -107,3 +107,5 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+eshop/GoogleService-Info.plist
+
