@@ -15,8 +15,13 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        createCategorySet()
-//        only need to run once to seed db with categories
+        // only need to run once to seed db with categories
+        // createCategorySet()
+        
+        // test whether we can get categories from firebase
+        // downloadCategoriesFromFirebase { (allCategories) in
+        //    print("callback is completed")
+        // }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
