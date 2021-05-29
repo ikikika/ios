@@ -12,6 +12,11 @@ import UIKit
 
 class CategoryCollectionViewController: UICollectionViewController {
 
+    // Mark: vars
+    var categoryArray: [Category] = [] // source of our collection
+    
+    
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,19 +27,40 @@ class CategoryCollectionViewController: UICollectionViewController {
         // downloadCategoriesFromFirebase { (allCategories) in
         //    print("callback is completed")
         // }
+    }
+    
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
         
+        loadCategories()
     }
 
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 0
+        return categoryArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                     
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CategoryCollectionViewCell
+        
+        return cell
+    }
+    
+    // MARK: download categories
+    
+    private func loadCategories() {
+        downloadCategoriesFromFirebase { (allCategories) in
+            
+//            print("we have ", allCategories.count)
+            
+            self.categoryArray = allCategories // save to array
+            
+            self.collectionView.reloadData() // refresh collection view after saving to array
+        }
+        
     }
 
     
