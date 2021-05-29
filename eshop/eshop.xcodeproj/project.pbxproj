@@ -122,15 +122,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		B1DB3270266237D60013614F /* Main Views */ = {
+		B1DB3274266238340013614F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */,
+				B1DB32722662382B0013614F /* Category.swift */,
 			);
-			path = "Main Views";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		B1DB3271266237F80013614F /* Custom Cells */ = {
+		B1DB32772662950F0013614F /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
 				B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */,
@@ -138,12 +138,12 @@
 			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
-		B1DB3274266238340013614F /* Model */ = {
+		B1DB3278266296150013614F /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
-				B1DB32722662382B0013614F /* Category.swift */,
+				B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */,
 			);
-			path = Model;
+			path = "Main Views";
 			sourceTree = "<group>";
 		};
 		B1E75604265FD11C0072EEFB = {
@@ -171,14 +171,14 @@
 		B1E7560F265FD11C0072EEFB /* eshop */ = {
 			isa = PBXGroup;
 			children = (
-				B1DB3270266237D60013614F /* Main Views */,
+				B1DB3278266296150013614F /* Main Views */,
+				B1DB32772662950F0013614F /* Custom Cells */,
 				B1DB326F266237B90013614F /* Helpers */,
 				B1DB326D266147350013614F /* GoogleService-Info.plist */,
 				B1E75610265FD11C0072EEFB /* AppDelegate.swift */,
 				B1E75612265FD11C0072EEFB /* SceneDelegate.swift */,
 				B1DB3274266238340013614F /* Model */,
 				B1E75616265FD11C0072EEFB /* Main.storyboard */,
-				B1DB3271266237F80013614F /* Custom Cells */,
 				B1E75619265FD11F0072EEFB /* Assets.xcassets */,
 				B1E7561B265FD11F0072EEFB /* LaunchScreen.storyboard */,
 				B1E7561E265FD11F0072EEFB /* Info.plist */,

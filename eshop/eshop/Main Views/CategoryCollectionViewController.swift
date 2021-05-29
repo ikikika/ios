@@ -46,6 +46,8 @@ class CategoryCollectionViewController: UICollectionViewController {
                     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CategoryCollectionViewCell
         
+        cell.generateCell(categoryArray[indexPath.row])
+        
         return cell
     }
     

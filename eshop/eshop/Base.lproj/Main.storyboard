@@ -72,6 +72,10 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="136" height="115"/>
+                                <connections>
+                                    <outlet property="imageView" destination="v3G-78-Eb1" id="Dag-an-ikX"/>
+                                    <outlet property="nameLabel" destination="sec-oY-dfh" id="TDA-ps-w7B"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
