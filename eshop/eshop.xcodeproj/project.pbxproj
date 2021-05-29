@@ -15,6 +15,7 @@
 		B1DB326C2661399B0013614F /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB326B2661399B0013614F /* FirebaseCollectionReference.swift */; };
 		B1DB326E266147350013614F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1DB326D266147350013614F /* GoogleService-Info.plist */; };
 		B1DB32732662382B0013614F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB32722662382B0013614F /* Category.swift */; };
+		B1DB3276266240FC0013614F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3275266240FC0013614F /* Constants.swift */; };
 		B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75610265FD11C0072EEFB /* AppDelegate.swift */; };
 		B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75612265FD11C0072EEFB /* SceneDelegate.swift */; };
 		B1E75618265FD11C0072EEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E75616265FD11C0072EEFB /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		B1DB326B2661399B0013614F /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		B1DB326D266147350013614F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1DB32722662382B0013614F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B1DB3275266240FC0013614F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1E7560D265FD11C0072EEFB /* eshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E75610265FD11C0072EEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E75612265FD11C0072EEFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B1DB326B2661399B0013614F /* FirebaseCollectionReference.swift */,
+				B1DB3275266240FC0013614F /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */,
 				B1DB326C2661399B0013614F /* FirebaseCollectionReference.swift in Sources */,
 				B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */,
+				B1DB3276266240FC0013614F /* Constants.swift in Sources */,
 				B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */,
 				B1DB32732662382B0013614F /* Category.swift in Sources */,
 			);
