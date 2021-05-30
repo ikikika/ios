@@ -32,4 +32,39 @@ class Item {
     }
     
     
+
+
+    
+
+}
+
+//MARK: Save items func
+
+func saveItemToFirestore(_ item: Item) {
+    
+    FirebaseReference(.Items).document(item.id).setData(itemDictionaryFrom(item) as! [String : Any])
+}
+
+//MARK: Helper functions
+
+func itemDictionaryFrom(_ item: Item) -> NSDictionary {
+    
+    return NSDictionary(
+        objects: [
+            item.id,
+            item.categoryId,
+            item.name,
+            item.description,
+            item.price,
+            item.imageLinks
+        ],
+        forKeys: [
+            kOBJECTID as NSCopying,
+            kCATEGORYID as NSCopying,
+            kNAME as NSCopying,
+            kDESCRIPTION as NSCopying,
+            kPRICE as NSCopying,
+            kIMAGELINKS as NSCopying
+        ]
+    )
 }
