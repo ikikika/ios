@@ -72,9 +72,11 @@ class CategoryCollectionViewController: UICollectionViewController {
 extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 2)
+        let paddingSpace = sectionInsets.left * (itemsPerRow+1)
         let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        let widthPerItem = Int(availableWidth / itemsPerRow)
+        
+//        print([paddingSpace, view.frame.width, availableWidth, widthPerItem])
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
