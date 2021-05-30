@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Gallery
+import JGProgressHUD
+import NVActivityIndicatorView
 
 class AddItemViewController: UIViewController {
 
@@ -17,6 +20,11 @@ class AddItemViewController: UIViewController {
     
     // MARK: Vars
     var category: Category! // pass category through action
+    var gallery: GalleryController!
+    let hud = JGProgressHUD(style: .dark)
+    
+    var activityIndicator: NVActivityIndicatorView?
+    
     var itemImages: [UIImage?] = []
     
     override func viewDidLoad() {
@@ -42,7 +50,7 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
-        
+        showImageGallery()
     }
     
     @IBAction func backgroundTapped(_ sender: Any) {
@@ -85,6 +93,47 @@ class AddItemViewController: UIViewController {
             popTheView()
         }
         
+    }
+    
+    //MARK: Show Gallery
+    private func showImageGallery() {
+        
+        self.gallery = GalleryController()
+        self.gallery.delegate = self
+        
+        Config.tabsToShow = [.imageTab, .cameraTab]
+        Config.Camera.imageLimit = 6
+        
+        self.present(self.gallery, animated: true, completion: nil)
+    }
+
+}
+
+extension AddItemViewController: GalleryControllerDelegate {
+    
+    func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
+        
+        if images.count > 0 {
+            
+            Image.resolve(images: images) { (resolvedImages) in
+                
+                self.itemImages = resolvedImages
+            }
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryControllerDidCancel(_ controller: GalleryController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     
