@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="3049.275362318841" y="-199.55357142857142"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Items Table View Controller-->
         <scene sceneID="xb8-h8-Qw0">
             <objects>
-                <tableViewController id="LLg-CI-FUg" sceneMemberID="viewController">
+                <tableViewController id="LLg-CI-FUg" customClass="ItemsTableViewController" customModule="eshop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7eC-Kj-e5k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -53,6 +53,14 @@ class CategoryCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    // MARK: UICollectionView Delegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "categoryToItemsSeg", sender: categoryArray[indexPath.row])
+        
+    }
+    
     // MARK: download categories
     
     private func loadCategories() {
@@ -63,6 +71,18 @@ class CategoryCollectionViewController: UICollectionViewController {
             self.categoryArray = allCategories // save to array
             
             self.collectionView.reloadData() // refresh collection view after saving to array
+        }
+        
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // check which segue is being called. important
+        if segue.identifier == "categoryToItemsSeg" {
+            let vc = segue.destination as! ItemsTableViewController
+            vc.category = sender as! Category
         }
         
     }
