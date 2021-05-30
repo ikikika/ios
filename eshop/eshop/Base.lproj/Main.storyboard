@@ -167,7 +167,7 @@
                     <navigationItem key="navigationItem" id="34y-he-VcI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8uA-RZ-sFm">
                             <connections>
-                                <segue destination="Lqm-SF-g66" kind="show" id="ea3-tt-G8f"/>
+                                <segue destination="Lqm-SF-g66" kind="show" identifier="itemToAddItemSeg" id="ea3-tt-G8f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -179,7 +179,7 @@
         <!--Add Item-->
         <scene sceneID="mWd-Av-VZZ">
             <objects>
-                <viewController id="Lqm-SF-g66" sceneMemberID="viewController">
+                <viewController id="Lqm-SF-g66" customClass="AddItemViewController" customModule="eshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S77-4r-T4Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,6 +201,9 @@
                                     <constraint firstAttribute="height" constant="30" id="y2J-Q3-5hE"/>
                                 </constraints>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="Lqm-SF-g66" eventType="touchUpInside" id="w51-XR-Z16"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NXg-J0-SZf">
                                 <rect key="frame" x="20" y="216" width="374" height="130"/>
@@ -214,6 +217,7 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="iIh-Kg-qfN" firstAttribute="top" secondItem="LK6-5f-qAQ" secondAttribute="top" constant="20" id="0DS-ko-zlJ"/>
                             <constraint firstItem="iIh-Kg-qfN" firstAttribute="centerX" secondItem="S77-4r-T4Y" secondAttribute="centerX" id="7nv-iF-pf9"/>
@@ -231,12 +235,29 @@
                             <constraint firstItem="qAc-yC-ONZ" firstAttribute="leading" secondItem="LK6-5f-qAQ" secondAttribute="leading" constant="20" id="yot-Va-Cyi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LK6-5f-qAQ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3EV-zz-Dfq" appends="YES" id="l6G-pj-DwO"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="26c-S9-krm">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="ZiK-4G-4mo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="ZiK-4G-4mo">
+                            <connections>
+                                <action selector="doneBarButtonItemPressed:" destination="Lqm-SF-g66" id="NZf-yd-K4z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="NXg-J0-SZf" id="lhs-Hx-JGr"/>
+                        <outlet property="priceTextField" destination="u67-Rt-FuZ" id="S7f-I8-vD4"/>
+                        <outlet property="titleTextField" destination="iIh-Kg-qfN" id="MKV-Tj-08r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVf-Cp-Dcj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3EV-zz-Dfq">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="Lqm-SF-g66" id="NOh-CO-z1O"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4513.04347826087" y="-200.22321428571428"/>
         </scene>
