@@ -164,11 +164,81 @@
                             <outlet property="delegate" destination="LLg-CI-FUg" id="ge3-es-nhn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="34y-he-VcI"/>
+                    <navigationItem key="navigationItem" id="34y-he-VcI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8uA-RZ-sFm">
+                            <connections>
+                                <segue destination="Lqm-SF-g66" kind="show" id="ea3-tt-G8f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DRr-8P-MJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3789.8550724637685" y="-200.22321428571428"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="mWd-Av-VZZ">
+            <objects>
+                <viewController id="Lqm-SF-g66" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S77-4r-T4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIh-Kg-qfN">
+                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u67-Rt-FuZ">
+                                <rect key="frame" x="20" y="162" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAc-yC-ONZ">
+                                <rect key="frame" x="20" y="366" width="76" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="Aw2-Bo-C7x"/>
+                                    <constraint firstAttribute="height" constant="30" id="y2J-Q3-5hE"/>
+                                </constraints>
+                                <state key="normal" title="Camera"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NXg-J0-SZf">
+                                <rect key="frame" x="20" y="216" width="374" height="130"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="wuJ-gl-UxZ"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iIh-Kg-qfN" firstAttribute="top" secondItem="LK6-5f-qAQ" secondAttribute="top" constant="20" id="0DS-ko-zlJ"/>
+                            <constraint firstItem="iIh-Kg-qfN" firstAttribute="centerX" secondItem="S77-4r-T4Y" secondAttribute="centerX" id="7nv-iF-pf9"/>
+                            <constraint firstItem="u67-Rt-FuZ" firstAttribute="leading" secondItem="LK6-5f-qAQ" secondAttribute="leading" constant="20" id="8cW-Kc-vBf"/>
+                            <constraint firstItem="NXg-J0-SZf" firstAttribute="top" secondItem="u67-Rt-FuZ" secondAttribute="bottom" constant="20" id="VXY-X7-Io0"/>
+                            <constraint firstItem="LK6-5f-qAQ" firstAttribute="trailing" secondItem="u67-Rt-FuZ" secondAttribute="trailing" constant="20" id="bYR-KY-tne"/>
+                            <constraint firstItem="iIh-Kg-qfN" firstAttribute="leading" secondItem="LK6-5f-qAQ" secondAttribute="leading" constant="20" id="d1G-pU-ZXJ"/>
+                            <constraint firstItem="qAc-yC-ONZ" firstAttribute="top" secondItem="NXg-J0-SZf" secondAttribute="bottom" constant="20" id="eIN-ju-mMT"/>
+                            <constraint firstItem="LK6-5f-qAQ" firstAttribute="trailing" secondItem="iIh-Kg-qfN" secondAttribute="trailing" constant="20" id="fJ2-Xo-u0h"/>
+                            <constraint firstItem="NXg-J0-SZf" firstAttribute="leading" secondItem="LK6-5f-qAQ" secondAttribute="leading" constant="20" id="itF-Bf-Xog"/>
+                            <constraint firstItem="LK6-5f-qAQ" firstAttribute="trailing" secondItem="NXg-J0-SZf" secondAttribute="trailing" constant="20" id="lGB-A3-InK"/>
+                            <constraint firstItem="u67-Rt-FuZ" firstAttribute="top" secondItem="iIh-Kg-qfN" secondAttribute="bottom" constant="20" id="p7l-Ka-DfU"/>
+                            <constraint firstItem="NXg-J0-SZf" firstAttribute="centerX" secondItem="S77-4r-T4Y" secondAttribute="centerX" id="xIC-7U-qLt"/>
+                            <constraint firstItem="u67-Rt-FuZ" firstAttribute="centerX" secondItem="S77-4r-T4Y" secondAttribute="centerX" id="xoS-yk-j2T"/>
+                            <constraint firstItem="qAc-yC-ONZ" firstAttribute="leading" secondItem="LK6-5f-qAQ" secondAttribute="leading" constant="20" id="yot-Va-Cyi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LK6-5f-qAQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Item" id="26c-S9-krm">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="ZiK-4G-4mo"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVf-Cp-Dcj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4513.04347826087" y="-200.22321428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jzg-0k-Jgq">
