@@ -27,12 +27,19 @@ class AddItemViewController: UIViewController {
     
     var itemImages: [UIImage?] = []
     
+    // MARK: View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        print(category.id)
+        // print(category.id)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballPulse, color: #colorLiteral(red: 0.9998469949, green: 0.4941213727, blue: 0.4734867811, alpha: 1), padding: nil)
+    }
 
     // Mark: IBActions
     @IBAction func doneBarButtonItemPressed(_ sender: Any) {
@@ -78,6 +85,8 @@ class AddItemViewController: UIViewController {
     //MARK: Save Item
     private func saveToFirebase() {
         
+        showLoadingIndicator()
+
         let item = Item()
         item.id = UUID().uuidString
         item.name = titleTextField.text!
@@ -92,16 +101,36 @@ class AddItemViewController: UIViewController {
                 item.imageLinks = imageLinkArray
                 
                 saveItemToFirestore(item)
+                
+                self.hideLoadingIndicator()
                 self.popTheView()
             }
 
-            
         } else {
             saveItemToFirestore(item)
             popTheView()
         }
-        
     }
+    
+    //MARK: Activity Indicator
+    
+    private func showLoadingIndicator() {
+        
+        if activityIndicator != nil {
+            self.view.addSubview(activityIndicator!)
+            activityIndicator!.startAnimating()
+        }
+    }
+
+    private func hideLoadingIndicator() {
+        
+        if activityIndicator != nil {
+            activityIndicator!.removeFromSuperview()
+            activityIndicator!.stopAnimating()
+        }
+    }
+
+    
     
     //MARK: Show Gallery
     private func showImageGallery() {
