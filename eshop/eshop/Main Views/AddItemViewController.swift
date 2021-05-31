@@ -87,6 +87,14 @@ class AddItemViewController: UIViewController {
         
         if itemImages.count > 0 {
             
+            uploadImages(images: itemImages, itemId: item.id) { (imageLinkArray) in
+                
+                item.imageLinks = imageLinkArray
+                
+                saveItemToFirestore(item)
+                self.popTheView()
+            }
+
             
         } else {
             saveItemToFirestore(item)
