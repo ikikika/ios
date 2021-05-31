@@ -104,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="VAd-nM-2QB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="VAd-nM-2QB" userLabel="Cell" customClass="ItemTableViewCell" customModule="eshop" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VAd-nM-2QB" id="k5b-qg-0vc">
@@ -157,6 +157,13 @@
                                         <constraint firstItem="7iA-8O-yuX" firstAttribute="centerY" secondItem="k5b-qg-0vc" secondAttribute="centerY" id="vdM-Rm-fOz"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="Cell"/>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="JaH-Vc-cz8" id="Edq-LW-J7P"/>
+                                    <outlet property="itemImageView" destination="7iA-8O-yuX" id="eUM-ML-7Sw"/>
+                                    <outlet property="nameLabel" destination="wCX-2d-W6S" id="dYb-gk-1B9"/>
+                                    <outlet property="priceLabel" destination="bWW-MX-EiM" id="gaS-wc-34H"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
