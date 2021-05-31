@@ -52,7 +52,11 @@ class AddItemViewController: UIViewController {
             
         } else {
             print("Error all fields are required")
-            // TODO: SHow error to user
+           
+            self.hud.textLabel.text = "All fields are required"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2.0)
         }
     }
     
