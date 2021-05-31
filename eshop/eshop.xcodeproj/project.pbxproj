@@ -19,6 +19,8 @@
 		B1DB327C2663512B0013614F /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB327B2663512B0013614F /* ItemsTableViewController.swift */; };
 		B1DB327E26636EFE0013614F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB327D26636EFE0013614F /* Item.swift */; };
 		B1DB328026639DC30013614F /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB327F26639DC30013614F /* AddItemViewController.swift */; };
+		B1DB328226646BED0013614F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB328126646BED0013614F /* Reachability.swift */; };
+		B1DB328426646C110013614F /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB328326646C110013614F /* Downloader.swift */; };
 		B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75610265FD11C0072EEFB /* AppDelegate.swift */; };
 		B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E75612265FD11C0072EEFB /* SceneDelegate.swift */; };
 		B1E75618265FD11C0072EEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E75616265FD11C0072EEFB /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		B1DB327B2663512B0013614F /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		B1DB327D26636EFE0013614F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B1DB327F26639DC30013614F /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		B1DB328126646BED0013614F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B1DB328326646C110013614F /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		B1E7560D265FD11C0072EEFB /* eshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E75610265FD11C0072EEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E75612265FD11C0072EEFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			children = (
 				B1DB326B2661399B0013614F /* FirebaseCollectionReference.swift */,
 				B1DB3275266240FC0013614F /* Constants.swift */,
+				B1DB328126646BED0013614F /* Reachability.swift */,
+				B1DB328326646C110013614F /* Downloader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -470,11 +476,13 @@
 			files = (
 				B1DB3268266135640013614F /* CategoryCollectionViewCell.swift in Sources */,
 				B1DB327E26636EFE0013614F /* Item.swift in Sources */,
+				B1DB328426646C110013614F /* Downloader.swift in Sources */,
 				B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */,
 				B1DB327C2663512B0013614F /* ItemsTableViewController.swift in Sources */,
 				B1DB326C2661399B0013614F /* FirebaseCollectionReference.swift in Sources */,
 				B1DB328026639DC30013614F /* AddItemViewController.swift in Sources */,
 				B1E75613265FD11C0072EEFB /* SceneDelegate.swift in Sources */,
+				B1DB328226646BED0013614F /* Reachability.swift in Sources */,
 				B1DB3276266240FC0013614F /* Constants.swift in Sources */,
 				B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */,
 				B1DB32732662382B0013614F /* Category.swift in Sources */,

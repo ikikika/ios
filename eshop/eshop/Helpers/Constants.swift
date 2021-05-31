@@ -8,6 +8,9 @@
 
 import Foundation
 
+// IDs and Keys
+public let kFILEREFERENCE = "gs://eshop-84b40.appspot.com"
+
 // Firebase headers
 public let kUSER_PATH = "User"
 public let kCATEGORY_PATH = "Category"
