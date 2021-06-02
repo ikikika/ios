@@ -282,23 +282,38 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="NDS-fO-y9L"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f50-ni-Vx2">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f50-ni-Vx2">
                                     <size key="itemSize" width="414" height="205"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XZq-pl-Ejl">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="XZq-pl-Ejl" customClass="ImageCollectionViewCell" customModule="eshop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-2.5" width="414" height="205"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sMz-R0-3KP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Lw-PT-Kxn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Lw-PT-Kxn" firstAttribute="leading" secondItem="sMz-R0-3KP" secondAttribute="leading" id="AgE-F8-kfu"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Lw-PT-Kxn" secondAttribute="trailing" id="HgE-lV-QBs"/>
+                                                <constraint firstItem="6Lw-PT-Kxn" firstAttribute="top" secondItem="sMz-R0-3KP" secondAttribute="top" id="Nz7-LL-2zx"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Lw-PT-Kxn" secondAttribute="bottom" id="PB0-9c-hZt"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="205"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4e5-42-Uu7" id="59R-Hf-SkF"/>
+                                    <outlet property="delegate" destination="4e5-42-Uu7" id="Kss-L8-gh9"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BK-s4-sjw">
                                 <rect key="frame" x="20" y="260" width="374" height="52"/>
