@@ -7,24 +7,31 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class ItemViewController: UIViewController {
 
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    //MARK: - Vars
+    var item: Item!
+    var itemImages: [UIImage] = []
+    let hud = JGProgressHUD(style: .dark)
+    
+    //MARK: View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("Item Name is ", item.name)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

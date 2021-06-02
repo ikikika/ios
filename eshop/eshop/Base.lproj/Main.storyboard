@@ -358,6 +358,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QoU-Sv-uAt"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="mqW-KC-pXc" id="gSt-cy-pdt"/>
+                        <outlet property="imageCollectionView" destination="bls-cR-DEb" id="IZv-9E-g7j"/>
+                        <outlet property="nameLabel" destination="7BK-s4-sjw" id="BME-Yc-c6O"/>
+                        <outlet property="priceLabel" destination="F5r-4v-9Hf" id="7og-vE-Xm0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xct-fb-svw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
