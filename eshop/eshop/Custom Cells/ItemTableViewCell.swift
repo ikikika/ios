@@ -33,8 +33,12 @@ class ItemTableViewCell: UITableViewCell {
         descriptionLabel.text = item.description
         priceLabel.text = "\(item.price!)"
         
-        //TODO: Download image
-
+        if item.imageLinks != nil && item.imageLinks.count > 0 {
+            
+            downloadImages(imageUrls: [item.imageLinks.first!]) { (images) in
+                self.itemImageView.image = images.first as? UIImage
+            }
+        }
     }
 
 

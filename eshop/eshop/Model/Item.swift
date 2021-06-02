@@ -31,11 +31,6 @@ class Item {
         imageLinks = _dictionary[kIMAGELINKS] as? [String]
     }
     
-    
-
-
-    
-
 }
 
 //MARK: Save items func
