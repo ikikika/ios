@@ -27,11 +27,33 @@ class ItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("Item Name is ", item.name)
+        
+//        print("Item Name is ", item.name)
+        setupUI()
     }
     
+    // MARK: Setup UI
+    
+    private func setupUI() {
+        
+        if item != nil {
+            
+            self.title = item.name
+            nameLabel.text = item.name
+            priceLabel.text = convertToCurrency(item.price)
+            descriptionTextView.text = item.description
+        }
+    }
+}
 
-   
-
+extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+    
 }
