@@ -23,6 +23,11 @@ class ItemViewController: UIViewController {
     var itemImages: [UIImage] = []
     let hud = JGProgressHUD(style: .dark)
     
+    private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+    private let cellHeight : CGFloat = 196.0
+    private let itemsPerRow: CGFloat = 1
+
+    
     //MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -82,6 +87,25 @@ extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
 
     }
+}
+
+
+extension ItemViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let availableWidth = collectionView.frame.width - sectionInsets.left
+
+        return CGSize(width: availableWidth, height: cellHeight)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return sectionInsets.left
+    }
 }
