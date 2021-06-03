@@ -36,6 +36,10 @@ class ItemViewController: UIViewController {
 //        print("Item Name is ", item.name)
         setupUI()
         downloadPictures()
+        
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "basket"), style: .plain, target: self, action: #selector(self.addToBasketButtonPressed))]
     }
     
     
@@ -66,6 +70,19 @@ class ItemViewController: UIViewController {
             descriptionTextView.text = item.description
         }
     }
+    
+    //MARK: - IBActions
+    
+    @objc func backAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func addToBasketButtonPressed() {
+        
+        print("add to basket", item.name)
+    }
+
+    
 }
 
 extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelegate {
