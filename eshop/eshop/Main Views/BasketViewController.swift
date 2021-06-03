@@ -91,7 +91,7 @@ class BasketViewController: UIViewController {
         }
         
         
-        //TODO: Update the button status
+        checkoutButtonStatusUpdate()
 
     }
     
@@ -106,6 +106,24 @@ class BasketViewController: UIViewController {
         return "Total price: " + convertToCurrency(totalPrice)
     }
 
+    // MARK: Control checkoutButton
+    
+    private func checkoutButtonStatusUpdate() {
+        
+        checkOutButtonOutlet.isEnabled = allItems.count > 0
+        
+        if checkOutButtonOutlet.isEnabled {
+            checkOutButtonOutlet.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        } else {
+            disableCheckoutButton()
+        }
+        
+    }
+    
+    private func disableCheckoutButton() {
+        checkOutButtonOutlet.isEnabled = false
+        checkOutButtonOutlet.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    }
 
 
 }
