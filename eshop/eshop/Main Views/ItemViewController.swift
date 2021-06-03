@@ -79,10 +79,30 @@ class ItemViewController: UIViewController {
     
     @objc func addToBasketButtonPressed() {
         
-        print("add to basket", item.name)
+//        print("add to basket", item.name)
+        createNewBasket()
     }
 
+    //MARK: - Add to basket
     
+    private func createNewBasket() {
+        
+        let newBasket = Basket()
+        newBasket.id = UUID().uuidString
+        newBasket.ownerId = "1234"
+        newBasket.itemIds = [self.item.id]
+        saveBasketToFirestore(newBasket)
+        
+        self.hud.textLabel.text = "Added to basket!"
+        self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: 2.0)
+    }
+
+    private func updateBasket(basket: Basket, withValues: [String : Any]) {
+        
+        
+    }
 }
 
 extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelegate {
