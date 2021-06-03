@@ -39,7 +39,7 @@ class ItemViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
         
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "basket"), style: .plain, target: self, action: #selector(self.addToBasketButtonPressed))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "addToBasket"), style: .plain, target: self, action: #selector(self.addToBasketButtonPressed))]
     }
     
     
@@ -80,7 +80,20 @@ class ItemViewController: UIViewController {
     @objc func addToBasketButtonPressed() {
         
 //        print("add to basket", item.name)
-        createNewBasket()
+        
+        // TODO: check if user is logged in or show login view
+        
+        
+        downloadBasketFromFirestore("1234") { (basket) in
+            
+            if basket == nil {
+                self.createNewBasket()
+            } else {
+                basket!.itemIds.append(self.item.id)
+                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+            }
+        }
+
     }
 
     //MARK: - Add to basket
@@ -101,7 +114,25 @@ class ItemViewController: UIViewController {
 
     private func updateBasket(basket: Basket, withValues: [String : Any]) {
         
-        
+        updateBasketInFirestore(basket, withValues: withValues) { (error) in
+            
+            if error != nil {
+                
+                self.hud.textLabel.text = "Error: \(error!.localizedDescription)"
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+
+                print("error updating basket", error!.localizedDescription)
+            } else {
+                
+                self.hud.textLabel.text = "Added to basket!"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+        }
+
     }
 }
 
