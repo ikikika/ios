@@ -14,6 +14,7 @@
 		B10CD6632667B5FA00EA124A /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD6622667B5FA00EA124A /* ItemViewController.swift */; };
 		B10CD6652667CAB000EA124A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD6642667CAB000EA124A /* ImageCollectionViewCell.swift */; };
 		B10CD66726689E5700EA124A /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD66626689E5700EA124A /* Basket.swift */; };
+		B10CD6692669048500EA124A /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD6682669048500EA124A /* BasketViewController.swift */; };
 		B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */; };
 		B1DB3268266135640013614F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */; };
 		B1DB326A2661375F0013614F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1DB32692661375F0013614F /* GoogleService-Info.plist */; };
@@ -66,6 +67,7 @@
 		B10CD6622667B5FA00EA124A /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		B10CD6642667CAB000EA124A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B10CD66626689E5700EA124A /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		B10CD6682669048500EA124A /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1DB32692661375F0013614F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				B1DB327B2663512B0013614F /* ItemsTableViewController.swift */,
 				B1DB327F26639DC30013614F /* AddItemViewController.swift */,
 				B10CD6622667B5FA00EA124A /* ItemViewController.swift */,
+				B10CD6682669048500EA124A /* BasketViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10CD6692669048500EA124A /* BasketViewController.swift in Sources */,
 				B1DB3268266135640013614F /* CategoryCollectionViewCell.swift in Sources */,
 				B1DB327E26636EFE0013614F /* Item.swift in Sources */,
 				B10CD6652667CAB000EA124A /* ImageCollectionViewCell.swift in Sources */,

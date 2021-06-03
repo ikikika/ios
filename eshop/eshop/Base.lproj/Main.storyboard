@@ -27,13 +27,13 @@
         <!--Basket-->
         <scene sceneID="pEF-8q-xjS">
             <objects>
-                <viewController id="yxh-Kg-sFR" sceneMemberID="viewController">
+                <viewController id="yxh-Kg-sFR" customClass="BasketViewController" customModule="eshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4sk-cv-tUJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ntT-dS-ylh">
-                                <rect key="frame" x="0.0" y="125" width="414" height="648"/>
+                                <rect key="frame" x="0.0" y="125" width="414" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="D4h-FC-HRj">
                                     <rect key="frame" x="0.0" y="136" width="414" height="44"/>
@@ -138,28 +138,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abh-in-1oK">
-                                <rect key="frame" x="0.0" y="778" width="414" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abh-in-1oK">
+                                <rect key="frame" x="0.0" y="772" width="414" height="41"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="XPH-gp-hxO"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <state key="normal" title="CHECKOUT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="checkoutButtonPressed:" destination="yxh-Kg-sFR" eventType="touchUpInside" id="MQV-LA-998"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="abh-in-1oK" firstAttribute="top" secondItem="ntT-dS-ylh" secondAttribute="bottom" id="8ie-LV-LaW"/>
                             <constraint firstItem="Scm-xW-5u9" firstAttribute="top" secondItem="JAv-0n-Fvv" secondAttribute="top" constant="8" id="AmK-p9-rR7"/>
                             <constraint firstItem="ntT-dS-ylh" firstAttribute="top" secondItem="Grk-Cj-NEd" secondAttribute="bottom" constant="8" id="NNr-Au-aCO"/>
                             <constraint firstItem="Grk-Cj-NEd" firstAttribute="leading" secondItem="JAv-0n-Fvv" secondAttribute="leading" constant="20" id="Pai-g5-52w"/>
                             <constraint firstItem="abh-in-1oK" firstAttribute="trailing" secondItem="JAv-0n-Fvv" secondAttribute="trailing" id="R1o-ur-pDM"/>
                             <constraint firstItem="abh-in-1oK" firstAttribute="leading" secondItem="JAv-0n-Fvv" secondAttribute="leading" id="TDC-Jm-qZj"/>
                             <constraint firstItem="Scm-xW-5u9" firstAttribute="leading" secondItem="Grk-Cj-NEd" secondAttribute="trailing" constant="2" id="TuJ-xc-kbq"/>
+                            <constraint firstItem="JAv-0n-Fvv" firstAttribute="bottom" secondItem="abh-in-1oK" secondAttribute="bottom" id="UFh-hi-Y8G"/>
                             <constraint firstItem="Grk-Cj-NEd" firstAttribute="top" secondItem="JAv-0n-Fvv" secondAttribute="top" constant="8" id="gdv-cm-lcN"/>
                             <constraint firstItem="ntT-dS-ylh" firstAttribute="trailing" secondItem="JAv-0n-Fvv" secondAttribute="trailing" id="mPi-Ab-Qme"/>
+                            <constraint firstItem="abh-in-1oK" firstAttribute="top" secondItem="ntT-dS-ylh" secondAttribute="bottom" id="pyZ-nl-zwR"/>
                             <constraint firstItem="abh-in-1oK" firstAttribute="top" secondItem="ntT-dS-ylh" secondAttribute="bottom" constant="5" id="qdS-Zt-TxT"/>
                             <constraint firstItem="JAv-0n-Fvv" firstAttribute="trailing" secondItem="Scm-xW-5u9" secondAttribute="trailing" constant="20" id="te4-XG-c8e"/>
                             <constraint firstItem="ntT-dS-ylh" firstAttribute="leading" secondItem="JAv-0n-Fvv" secondAttribute="leading" id="uvN-MO-fXG"/>
@@ -169,6 +172,13 @@
                         <viewLayoutGuide key="safeArea" id="JAv-0n-Fvv"/>
                     </view>
                     <navigationItem key="navigationItem" title="Basket" id="WQo-FM-Scr"/>
+                    <connections>
+                        <outlet property="basketTotalPriceLabel" destination="sTY-Ge-c13" id="whk-Ib-zia"/>
+                        <outlet property="checkOutButtonOutlet" destination="abh-in-1oK" id="mmG-jR-f4S"/>
+                        <outlet property="footerView" destination="D4h-FC-HRj" id="EoO-zD-Cu7"/>
+                        <outlet property="tableView" destination="ntT-dS-ylh" id="hGl-yB-xyl"/>
+                        <outlet property="totalItemsLabel" destination="Scm-xW-5u9" id="GLL-MS-YOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QD-uv-LJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
