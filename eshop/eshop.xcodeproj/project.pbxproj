@@ -13,6 +13,7 @@
 		B10CD6612667AF0E00EA124A /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD6602667AF0E00EA124A /* HelperFunctions.swift */; };
 		B10CD6632667B5FA00EA124A /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD6622667B5FA00EA124A /* ItemViewController.swift */; };
 		B10CD6652667CAB000EA124A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD6642667CAB000EA124A /* ImageCollectionViewCell.swift */; };
+		B10CD66726689E5700EA124A /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CD66626689E5700EA124A /* Basket.swift */; };
 		B1DB3266266133F00013614F /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */; };
 		B1DB3268266135640013614F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */; };
 		B1DB326A2661375F0013614F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1DB32692661375F0013614F /* GoogleService-Info.plist */; };
@@ -64,6 +65,7 @@
 		B10CD6602667AF0E00EA124A /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		B10CD6622667B5FA00EA124A /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		B10CD6642667CAB000EA124A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B10CD66626689E5700EA124A /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		B1DB3265266133F00013614F /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		B1DB3267266135640013614F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1DB32692661375F0013614F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				B1DB32722662382B0013614F /* Category.swift */,
 				B1DB327D26636EFE0013614F /* Item.swift */,
+				B10CD66626689E5700EA124A /* Basket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				B1E75611265FD11C0072EEFB /* AppDelegate.swift in Sources */,
 				B1DB327C2663512B0013614F /* ItemsTableViewController.swift in Sources */,
 				B1DB326C2661399B0013614F /* FirebaseCollectionReference.swift in Sources */,
+				B10CD66726689E5700EA124A /* Basket.swift in Sources */,
 				B10CD65F26653CB200EA124A /* ItemTableViewCell.swift in Sources */,
 				B10CD6612667AF0E00EA124A /* HelperFunctions.swift in Sources */,
 				B1DB328026639DC30013614F /* AddItemViewController.swift in Sources */,
