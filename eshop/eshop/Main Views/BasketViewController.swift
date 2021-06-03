@@ -70,12 +70,42 @@ class BasketViewController: UIViewController {
           
           downloadItems(basket!.itemIds) { (allItems) in
               
-              self.allItems = allItems
-              self.tableView.reloadData()
+                self.allItems = allItems
+                self.updateTotalLabels(false)
+                self.tableView.reloadData()
           }
       }
       
     }
+    
+    //MARK: - Helper functions
+    
+    private func updateTotalLabels(_ isEmpty: Bool) {
+        
+        if isEmpty {
+            totalItemsLabel.text = "0"
+            basketTotalPriceLabel.text = returnBasketTotalPrice()
+        } else {
+            totalItemsLabel.text = "\(allItems.count)"
+            basketTotalPriceLabel.text = returnBasketTotalPrice()
+        }
+        
+        
+        //TODO: Update the button status
+
+    }
+    
+    private func returnBasketTotalPrice() -> String {
+        
+        var totalPrice = 0.0
+        
+        for item in allItems {
+            totalPrice += item.price
+        }
+        
+        return "Total price: " + convertToCurrency(totalPrice)
+    }
+
 
 
 }
