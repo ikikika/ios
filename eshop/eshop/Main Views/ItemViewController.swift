@@ -30,6 +30,23 @@ class ItemViewController: UIViewController {
         
 //        print("Item Name is ", item.name)
         setupUI()
+        downloadPictures()
+    }
+    
+    
+    // MARK: Download pictures
+    
+    private func downloadPictures() {
+        
+        if item != nil && item.imageLinks != nil {
+            downloadImages(imageUrls: item.imageLinks) { (allImages) in
+                if allImages.count > 0 {
+                    self.itemImages = allImages as! [UIImage]
+                    self.imageCollectionView.reloadData()
+                }
+            }
+        }
+        
     }
     
     // MARK: Setup UI
@@ -47,12 +64,23 @@ class ItemViewController: UIViewController {
 }
 
 extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+     
+        return itemImages.count == 0 ? 1 : itemImages.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
+        
+        if itemImages.count > 0 {
+            cell.setupImageWith(itemImage: itemImages[indexPath.row])
+        }
+        
+        return cell
+
     }
     
     

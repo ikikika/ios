@@ -308,6 +308,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="205"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="6Lw-PT-Kxn" id="j9t-F9-Pj2"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
