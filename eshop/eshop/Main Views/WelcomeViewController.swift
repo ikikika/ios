@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import JGProgressHUD
+import NVActivityIndicatorView
 
 class WelcomeViewController: UIViewController {
 
@@ -16,7 +18,12 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var resendButton: UIButton!
     
+    //MARK: - Vars
     
+    let hud = JGProgressHUD(style: .dark)
+    var activityIdicator: NVActivityIndicatorView?
+    
+        
     // MARK: VIew lifecycles
     
     override func viewDidLoad() {
@@ -24,10 +31,19 @@ class WelcomeViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        activityIdicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60.0, height: 60.0), type: .ballPulse, color: #colorLiteral(red: 0.9998469949, green: 0.4941213727, blue: 0.4734867811, alpha: 1.0), padding: nil)
+    }
+
+    
     // MARK: IBActions
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        print("cancel")
+//        print("cancel")
+        
+        dismissView()
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -45,5 +61,13 @@ class WelcomeViewController: UIViewController {
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
         print("resend")
     }
+    
+    //MARK: - Helpers
+    
+    private func dismissView() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+
     
 }
