@@ -84,15 +84,17 @@ class ItemViewController: UIViewController {
         // TODO: check if user is logged in or show login view
         
         
-        downloadBasketFromFirestore("1234") { (basket) in
-            
-            if basket == nil {
-                self.createNewBasket()
-            } else {
-                basket!.itemIds.append(self.item.id)
-                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
-            }
-        }
+//        downloadBasketFromFirestore("1234") { (basket) in
+//
+//            if basket == nil {
+//                self.createNewBasket()
+//            } else {
+//                basket!.itemIds.append(self.item.id)
+//                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+//            }
+//        }
+        
+        showLoginView()
 
     }
 
@@ -133,6 +135,17 @@ class ItemViewController: UIViewController {
             }
         }
 
+    }
+    
+    // MARK: show login view
+    
+    private func showLoginView() {
+        
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil)
+                            .instantiateViewController(identifier: "loginView")
+        
+        self.present(loginView, animated: true, completion: nil)
+        
     }
 }
 
