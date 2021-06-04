@@ -106,7 +106,7 @@ class MUser {
                 
                 if authDataResult!.user.isEmailVerified {
                     
-                    //to download user from firestore
+                    downloadUserFromFirestore(userId: authDataResult!.user.uid, email: email)
                     completion(error, true)
                 } else {
                     
@@ -133,11 +133,82 @@ class MUser {
                 
                 //send email verification
                 authDataResult!.user.sendEmailVerification { (error) in
-                    print("auth email verification error : ", error?.localizedDescription)
+                    print("auth email verification error : ", error?.localizedDescription as Any)
                 }
             }
         }
     }
-
     
 }
+
+//MARK: - DownloadUser
+
+func downloadUserFromFirestore(userId: String, email: String) {
+    
+    FirebaseReference(.User).document(userId).getDocument { (snapshot, error) in
+        
+        guard let snapshot = snapshot else { return }
+        
+        if snapshot.exists {
+            print("download current user from firestore")
+            saveUserLocally(mUserDictionary: snapshot.data()! as NSDictionary)
+        } else {
+            //there is no user, save new in firestore
+            
+            let user = MUser(_objectId: userId, _email: email, _firstName: "", _lastName: "")
+            saveUserLocally(mUserDictionary: userDictionaryFrom(user: user))
+            saveUserToFirestore(mUser: user)
+        }
+    }
+}
+
+
+
+//MARK: - Save user to firebase
+
+func saveUserToFirestore(mUser: MUser) {
+    
+    FirebaseReference(.User).document(mUser.objectId).setData(userDictionaryFrom(user: mUser) as! [String : Any]) { (error) in
+        
+        if error != nil {
+            print("error saving user \(error!.localizedDescription)")
+        }
+    }
+}
+
+
+func saveUserLocally(mUserDictionary: NSDictionary) {
+    
+    UserDefaults.standard.set(mUserDictionary, forKey: kCURRENTUSER)
+    UserDefaults.standard.synchronize()
+}
+
+
+// MARK: helper function
+
+func userDictionaryFrom(user: MUser) -> NSDictionary {
+    return NSDictionary(
+        objects: [
+            user.objectId,
+            user.email,
+            user.firstName,
+            user.lastName,
+            user.fullName,
+            user.fullAddress,
+            user.onBoard,
+            user.purchasedItemIds
+        ],
+        forKeys: [
+            kOBJECTID as NSCopying,
+            kEMAIL as NSCopying,
+            kFIRSTNAME as NSCopying,
+            kLASTNAME as NSCopying,
+            kFULLNAME as NSCopying,
+            kFULLADDRESS as NSCopying,
+            kONBOARD as NSCopying,
+            kPURCHASEDITEMIDS as NSCopying
+        ]
+    )
+}
+
+
