@@ -64,10 +64,32 @@ class WelcomeViewController: UIViewController {
     
     //MARK: - Helpers
     
+    private func textFieldsHaveText() -> Bool {
+        return (emailTextField.text != "" && passwordTextField.text != "")
+    }
+    
     private func dismissView() {
         self.dismiss(animated: true, completion: nil)
     }
 
-
+    // MARK: Activity Indicator
+    
+    private func showLoadingIndicator () {
+        
+        if activityIdicator != nil {
+            self.view.addSubview(activityIdicator!)
+            activityIdicator!.startAnimating()
+        }
+        
+    }
+    
+    private func hideLoadingIndicator () {
+        
+        if activityIdicator != nil {
+            activityIdicator!.removeFromSuperview()
+            activityIdicator!.stopAnimating()
+        }
+        
+    }
     
 }
