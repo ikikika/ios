@@ -51,7 +51,19 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {
-        print("register")
+       
+//        print("register")
+        
+        if textFieldsHaveText() {
+            
+            registerUser()
+        } else {
+            hud.textLabel.text = "All fields are required"
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 2.0)
+        }
+        
     }
     
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
@@ -61,6 +73,35 @@ class WelcomeViewController: UIViewController {
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
         print("resend")
     }
+    
+    
+    // MARK Register users
+    
+    private func registerUser() {
+        
+        showLoadingIndicator()
+        
+        MUser.registerUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
+            
+            if error == nil {
+                self.hud.textLabel.text = "Verification Email sent!"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            } else {
+                print("error registering", error!.localizedDescription)
+                self.hud.textLabel.text = error!.localizedDescription
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+            
+            
+            self.hideLoadingIndicator()
+        }
+        
+    }
+
     
     //MARK: - Helpers
     
