@@ -79,11 +79,26 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
-        print("forgot")
+//        print("forgot")
+        
+        if emailTextField.text != "" {
+            resetThePassword()
+        } else {
+            hud.textLabel.text = "Please insert email!"
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 2.0)
+        }
+
     }
     
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
-        print("resend")
+//        print("resend")
+        
+        MUser.resendVerificationEmail(email: emailTextField.text!) { (error) in
+            
+            print("error resending email", error?.localizedDescription)
+        }
     }
     
     
@@ -132,6 +147,8 @@ class WelcomeViewController: UIViewController {
                     self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
                     self.hud.show(in: self.view)
                     self.hud.dismiss(afterDelay: 2.0)
+                    
+                    self.resendButton.isHidden = false
                 }
                 
             } else {
@@ -151,6 +168,25 @@ class WelcomeViewController: UIViewController {
 
     
     //MARK: - Helpers
+    
+    private func resetThePassword() {
+        
+        MUser.resetPasswordFor(email: emailTextField.text!) { (error) in
+            
+            if error == nil {
+                self.hud.textLabel.text = "Reset password email sent!"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            } else {
+                self.hud.textLabel.text = error!.localizedDescription
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+        }
+    }
+
     
     private func textFieldsHaveText() -> Bool {
         return (emailTextField.text != "" && passwordTextField.text != "")
