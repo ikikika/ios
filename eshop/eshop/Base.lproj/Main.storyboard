@@ -734,7 +734,7 @@
         <!--Profile-->
         <scene sceneID="JCQ-Ia-Jrj">
             <objects>
-                <tableViewController id="Avh-7F-MGD" sceneMemberID="viewController">
+                <tableViewController id="Avh-7F-MGD" customClass="ProfileTableViewController" customModule="eshop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vZT-bC-rSt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -808,6 +808,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="QbZ-dh-Gja"/>
+                    <connections>
+                        <outlet property="finishRegistrationButtonOutlet" destination="pUQ-Xi-Bcg" id="Jno-aH-yf9"/>
+                        <outlet property="purchaseHistoryButtonOutlet" destination="dY0-qg-DQl" id="tEA-ms-sxx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5G-qY-1Pk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
