@@ -47,7 +47,19 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        print("login")
+//        print("login")
+        
+        if textFieldsHaveText() {
+            
+            loginUser()
+        } else {
+            hud.textLabel.text = "All fields are required"
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 2.0)
+        }
+
+        
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {
@@ -101,6 +113,41 @@ class WelcomeViewController: UIViewController {
         }
         
     }
+    
+    //MARK: - Login User
+    
+    private func loginUser() {
+        
+        showLoadingIndicator()
+        
+        MUser.loginUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error, isEmailVerified) in
+            
+            if error == nil {
+                
+                if  isEmailVerified {
+                    self.dismissView()
+                    print("Email is verified")
+                } else {
+                    self.hud.textLabel.text = "Please verify your email!"
+                    self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                    self.hud.show(in: self.view)
+                    self.hud.dismiss(afterDelay: 2.0)
+                }
+                
+            } else {
+                print("error logging in the user", error!.localizedDescription)
+                self.hud.textLabel.text = error!.localizedDescription
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+            
+            
+            self.hideLoadingIndicator()
+        }
+        
+    }
+
 
     
     //MARK: - Helpers
