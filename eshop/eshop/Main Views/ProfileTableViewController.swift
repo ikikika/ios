@@ -14,6 +14,10 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var finishRegistrationButtonOutlet: UIButton!
     @IBOutlet weak var purchaseHistoryButtonOutlet: UIButton!
     
+    // MARK: Vars
+    
+    var editBarButtonOutlet: UIBarButtonItem!
+    
     
     //MARK: - View LifeCycle
 
@@ -26,7 +30,7 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //check logged in status
+        checkLoginStatus()
     }
     
 
@@ -36,10 +40,39 @@ class ProfileTableViewController: UITableViewController {
         return 3
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        return UITableViewCell()
+//    }
+    
+    //MARK: - Helpers
+    
+    private func checkLoginStatus() {
+        
+        if MUser.currentUser() == nil {
+            createRightBarButton(title: "Login")
+        } else {
+            createRightBarButton(title: "Edit")
+        }
     }
-   
+
+    private func createRightBarButton(title: String) {
+        
+        editBarButtonOutlet = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(rightBarButtonItemPressed))
+        
+        self.navigationItem.rightBarButtonItem = editButtonItem
+    }
+    
+    //MARK: - IBActions
+    
+    @objc func rightBarButtonItemPressed() {
+        
+        if editButtonItem.title == "Login" {
+            //show login vire
+        } else {
+            //go to profile
+        }
+    }
+
    
     // MARK: - Navigation
 

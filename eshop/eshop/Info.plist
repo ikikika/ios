@@ -64,5 +64,7 @@
 	<string>Camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Library</string>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<string>NO</string>
 </dict>
 </plist>
