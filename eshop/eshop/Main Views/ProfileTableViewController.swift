@@ -31,6 +31,7 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         checkLoginStatus()
+        checkOnboardingStatus()
     }
     
 
@@ -46,6 +47,29 @@ class ProfileTableViewController: UITableViewController {
     
     //MARK: - Helpers
     
+    
+    private func checkOnboardingStatus() {
+        
+        if MUser.currentUser() != nil {
+            
+            if MUser.currentUser()!.onBoard {
+                finishRegistrationButtonOutlet.setTitle("Account is Active", for: .normal)
+                finishRegistrationButtonOutlet.isEnabled = false
+            } else {
+                
+                finishRegistrationButtonOutlet.setTitle("Finish registration", for: .normal)
+                finishRegistrationButtonOutlet.isEnabled = true
+                finishRegistrationButtonOutlet.tintColor = .red
+            }
+            
+        } else {
+            finishRegistrationButtonOutlet.setTitle("Logged out", for: .normal)
+            finishRegistrationButtonOutlet.isEnabled = false
+            purchaseHistoryButtonOutlet.isEnabled = false
+        }
+    }
+
+    
     private func checkLoginStatus() {
         
         if MUser.currentUser() == nil {
@@ -58,8 +82,8 @@ class ProfileTableViewController: UITableViewController {
     private func createRightBarButton(title: String) {
         
         editBarButtonOutlet = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(rightBarButtonItemPressed))
-        
-        self.navigationItem.rightBarButtonItem = editButtonItem
+        editButtonItem.title = title
+        self.navigationItem.rightBarButtonItem = editBarButtonOutlet
     }
     
     //MARK: - IBActions
@@ -67,19 +91,23 @@ class ProfileTableViewController: UITableViewController {
     @objc func rightBarButtonItemPressed() {
         
         if editButtonItem.title == "Login" {
-            //show login vire
+            showLoginView()
         } else {
-            //go to profile
+            goToEditProfile()
         }
     }
 
    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
+   private func showLoginView() {
+       
+       let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+       
+       self.present(loginView, animated: true, completion: nil)
+   }
+   
+   private func goToEditProfile() {
+       print("edit profile")
+   }
   
 
 }
