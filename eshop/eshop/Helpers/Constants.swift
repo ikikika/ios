@@ -33,3 +33,13 @@ public let kIMAGELINKS = "imageLinks"
 // Basket
 public let kOWNERID = "ownerId"
 public let kITEMIDS = "itemIds"
+
+// MUSer
+public let kEMAIL = "email"
+public let kFIRSTNAME = "firstName"
+public let kLASTNAME = "lastName"
+public let kFULLNAME = "fullName"
+public let kCURRENTUSER = "currentUser"
+public let kFULLADDRESS = "fullAdddress"
+public let kONBOARD = "onBoard"
+public let kPURCHASEDITEMIDS = "purchasedItemIds"
